@@ -343,8 +343,9 @@ header {
 .card_body{
     position: absolute;
     inset: 0;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     backface-visibility: hidden;
     border-radius: 8px;
 
