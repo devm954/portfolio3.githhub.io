@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(#2b1055,#7597de);
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 80%;
+    max-width: 2100px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.navbar .logo a:hover {
+    color: orange;
+}
+
+.navbar .links a:hover {
+    color: orange;
+}
+
+.navbar .logo a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbar .logo a:hover {
+    color: orange;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action_btn:hover {
+    scale: 1.2;
+}
+
+.navbar .links li a {
+    font-size: 1.2rem;
+}
+
+.dropdown .links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    width: 300px;
+    right: 2rem;
+    top: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 11;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown.open {
+    height: 240px;
+}
+
+.dropdown.onclick {
+    display: block;
+}
+
+.dropdown .links a:hover {
+    color: orange;
+}
+
+.dropdown .links {
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 30vh;
+
+}
+
+.dropdown .links .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 780px) {
+    .navbar {
+        width: 84%;
+    }
+
+    .navbar .links {
+        gap: 1.5rem;
+    }
+
+    .action_btn:hover {
+        scale: 1.05;
+    }
+
+    .dropdown.open {
+        display: block;
+    }
+    .dropdown .links a{
+        font-size: 1.2rem;
+        font-weight: bolder;
+        
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .navbar .links {
+        display: none;
+    }
+
+    .action_btn {
+        display: none;
+    }
+
+
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+}
+
+
+
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522,transparent);
+    z-index: 1000;
+}
+.home img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.home img#moon{
+    mix-blend-mode: screen;
+}
+.home img#mountains_front{
+    z-index: 10;
+}
+
+#intro{
+    position: absolute;
+    right: -410px;
+    color: white;
+    white-space: nowrap;
+    font-size: 8.5vh;
+    z-index: 9;
+}
+#intro2{
+    position: absolute;
+    color: white;
+    white-space: nowrap;
+    font-size: 3.5vh;
+    display: none;
+    z-index: 9;
+}
+
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 20px;
+    background: #fff;
+    color: black;
+    font-size: 1.5em;
+    transform: translateY(100px);
+    
+}
+
+.about{
+
+    position: relative;
+    padding: 70px;
+    background: #1c0522;
+}
+.about h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    margin-bottom: 5vh;
+}
+.about span{
+    color: #f9004d;
+}
+.about p{
+    font-size: 1.2em;
+    color: #fff;
+}
+.about .layout{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    box-shadow: 0px 0px 30px #f9004d ;
+}
+.about .about_section .profile img{
+    max-width: 100%;
+    width: 200vw;
+    height: 64vh;
+    border-radius: 10px;
+    box-shadow: 3px 2px 4px #f9004d;
+}
+.about .about_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+.about .about_section .profile_info h3{
+    color: white;
+    font-size: 2rem;
+}
+
+.about .about_section .profile_info h5{
+    color: white;
+    font-size: 1.15rem;
+    margin-bottom: 2vh;
+}
+
+.skills{
+    background-color: #1c0522;
+    padding: 12vh;
+}
+.skills h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    margin-bottom: 5vh;
+}
+.skills span{
+    color: #f9004d;
+}
+
+.allcards{
+    height: 100%;
+    background-color: #1c0522;
+    color: #fff;
+    display: grid;
+    place-content: center;
+}
+
+.skills .showcase{
+    display: flex;
+    gap: 3vw;
+}
+
+.card{
+    width: 250px;
+    height: 300px;
+    perspective: 800px;
+}
+.card_inner{
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card_inner{
+    transform: rotateY(180deg);
+}
+
+.card_body{
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backface-visibility: hidden;
+    border-radius: 8px;
+
+    box-shadow: 0px 0px 15px #f9004d ;;
+}
+.card_body--front{
+    background-color: black;
+    font-size: 0.25rem;
+    
+}
+.card_body--back{
+    background-color: #f9004d;
+    font-size: 0.25rem;
+    transform: rotateY(180deg);
+}
+
+.contact{
+    padding: 40px 7%;
+    background: #1c0522;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+}
+.contact_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_img img{
+    max-width: 100%;
+    width: 200vw;
+    height: 76vh;
+    border-radius: 10px;
+    box-shadow: 3px 2px 4px #f9004d;
+}
+.contact_form {
+    display: flex;
+    gap: 5vw;
+}
+
+.contact_form .input{
+    width: 198vw;
+}
+
+.contact_form  .input h2{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+.contact_form .input span{
+    color: #f9004d;
+}
+
+.contact_form .input p{
+    color: white;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-size: 1.1rem;
+    margin-bottom: 3.8rem;
+}
+
+.contact_form .input form{
+    display: flex;
+    flex-direction: column;
+}
+.contact_form .input form input, form textarea{
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: #191919;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 10px;
+}
+
+.contact_form .input textarea{
+    resize: none;
+    height: 200px;
+}
+
+.contact_form .input form .contact_btn{
+    display: inline-block;
+    background: #f9004d;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    width: 220px;
+    transition: ease .20s;
+    cursor: pointer;
+}
+
+.contact_form .input form .contact_btn:hover{
+    border: 2px solid #f9004d;
+    background: transparent;
+    transform: scale(1.1);
+}
+.contact .contact_img2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+}
+.contact_img2 img{
+    max-width: 100%;
+    width: 200vw;
+    height: 62vh;
+    border-radius: 10px;
+    box-shadow: 3px 2px 4px #f9004d;
+}
+@media (max-width: 530px) {
+    .dropdown {
+        left: 2rem;
+        width: unset;
+    }
+    
+}
+@media (max-width: 450px) {
+    #intro{
+        font-size: 1.7rem;
+        right: -434px;
+    }
+    .contact_img{
+        display: none;
+    }
+    .contact .contact_img2{
+        display: block;
+    }
+    .about .about_section{
+        flex-direction: column;
+    }
+    .about{
+        padding: 50px;
+    }
+    .about h2{
+        text-align: center;
+    }
+    .about p{
+        text-align: center;
+        width: 62vw
+    }
+    .profile_info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about .about_section .profile img{
+        height: 48vh;
+    }
+    
+    .contact_form .input form .contact_btn{
+        width: 120px;
+    }
+    .skills h2{
+        text-align: center;
+        width: 65vw;
+    }
+    .skills .showcase{
+        flex-direction: column;
+    }
+    .card_body--front{
+        font-size: 0.25rem;
+    }
+    .card_body--back{
+        font-size: 0.25rem;
+    }
+}
+
+
